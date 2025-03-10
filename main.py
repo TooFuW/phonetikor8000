@@ -4,7 +4,7 @@ import sys, os
 import pystray
 from PIL import Image
 
-# pyinstaller --onefile --windowed --icon=image.png --name="Phonetikor8000" --add-data "image.png:img" main.py
+# pyinstaller --onefile --windowed --icon=image.png --name="Phonetikor8000" --add-data "image.png;." main.py
 
 # Dynamic path
 if getattr(sys, 'frozen', False):
