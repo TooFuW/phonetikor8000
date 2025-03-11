@@ -41,6 +41,16 @@ kboard = Controller()
 
 # Function to be called when a key is pressed
 def on_press(key):
+    global activate
+    try:
+        if (key.char == "£"):
+            activate = not activate
+            icon.menu = pystray.Menu(
+                pystray.MenuItem("Activer" if not activate else "Désactiver", after_click),
+                pystray.MenuItem("Fermer", after_click))
+            icon.update_menu()
+    except:
+        return
     if activate:
         try:
             # If the key is one of the following
@@ -81,6 +91,9 @@ def on_press(key):
                 case ")":
                     kboard.tap(Key.backspace)
                     kboard.tap('ŋ')
+                case "=":
+                    kboard.tap(Key.backspace)
+                    kboard.tap('ɪ')
                 case _:
                     return
         except:
