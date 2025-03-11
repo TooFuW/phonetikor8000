@@ -44,6 +44,7 @@ def on_press(key):
     global activate
     try:
         if (key.char == "£"):
+            kboard.tap(Key.backspace)
             activate = not activate
             icon.menu = pystray.Menu(
                 pystray.MenuItem("Activer" if not activate else "Désactiver", after_click),
